@@ -66,26 +66,26 @@ jobs:
       - name: Terraform Apply.
         run: terraform apply -auto-approve 
 
-      # - name: 'install kubectl'
-      #   run: |
-      #      curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-      #      chmod +x ./kubectl
-      #      sudo mv ./kubectl /usr/local/bin/kubectl
+      - name: 'install kubectl'
+        run: |
+           curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+           chmod +x ./kubectl
+           sudo mv ./kubectl /usr/local/bin/kubectl
 
-      # - name: Debug Variables
-      #   run: |
-      #     echo "VAR FROM vars.EKS_CLUSTER_NAME = '${{ vars.EKS_CLUSTER_NAME }}'"
-      #     echo "VAR FROM secrets.EKS_CLUSTER_NAME = '${{ secrets.EKS_CLUSTER_NAME }}'"
-      #     echo "ENV VAR EKS_CLUSTER_NAME = '$EKS_CLUSTER_NAME'"
+      - name: Debug Variables
+        run: |
+          echo "VAR FROM vars.EKS_CLUSTER_NAME = '${{ vars.EKS_CLUSTER_NAME }}'"
+          echo "VAR FROM secrets.EKS_CLUSTER_NAME = '${{ secrets.EKS_CLUSTER_NAME }}'"
+          echo "ENV VAR EKS_CLUSTER_NAME = '$EKS_CLUSTER_NAME'"
 
-      # - name: 'authenticate to EKS Cluster'
-      #   run: aws eks update-kubeconfig --name ${{ vars.EKS_CLUSTER_NAME }} --region us-east-2
+      - name: 'authenticate to EKS Cluster'
+        run: aws eks update-kubeconfig --name ${{ vars.EKS_CLUSTER_NAME }} --region us-east-2
       
-      # - name: 'Deploying the ClusterIssuer to EKS'
-      #   run: kubectl apply -f ClusterIssuer.yaml
+      - name: 'Deploying the ClusterIssuer to EKS'
+        run: kubectl apply -f ClusterIssuer.yaml
 
-      # - name: 'Deploying argocd ingress rule to EKS'
-      #   run: kubectl apply -f ingress-argocd.yaml -n argocd
+      - name: 'Deploying argocd ingress rule to EKS'
+        run: kubectl apply -f ingress-argocd.yaml -n argocd
 
       # - name: Terraform Destroy
       #   run: terraform destroy -auto-approve
