@@ -11,10 +11,10 @@ spec:
   ingressClassName: external-nginx
   tls:
   - hosts:
-    - argocd.podonecohort4.online
-    secretName: argocd-podonecohort4.online
+    - argocd.fausatjtech.online
+    secretName: argocd-fausatjtech.online
   rules:
-  - host: argocd.podonecohort4.online
+  - host: argocd.fausatjtech.online
     http:
       paths:
       - path: /

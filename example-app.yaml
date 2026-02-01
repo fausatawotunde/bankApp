@@ -45,10 +45,10 @@ spec:
   ingressClassName: external-nginx
   tls:
   - hosts:
-    - app.podonecohort4.online
-    secretName: app-podonecohort4.online
+    - app.fausatjtech.online
+    secretName: app-fausatjtech.online
   rules:
-  - host: app.podonecohort4.online
+  - host: app.fausatjtech.online
     http:
       paths:
       - path: /

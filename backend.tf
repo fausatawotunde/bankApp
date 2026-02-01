@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "maryann-terraform-state"
-    key    = "maryann-terraform-state/prodution/terraform.tfstate"
-    region = "us-east-1"
+    bucket = "bankappmaryann"
+    key    = "bankappmaryann/prodution/terraform.tfstate"
+    region = "us-east-2"
   }
 }

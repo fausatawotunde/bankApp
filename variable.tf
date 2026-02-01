@@ -52,7 +52,7 @@ variable "min_size" {
 variable "instance_types" {
   description = "Instance types for the EKS node group"
   type        = list(string)
-  default     = ["t2.micro"]    
+  default     = ["t2.medium"]    
 } 
 
 variable "capacity_type" {
@@ -86,13 +86,13 @@ variable "zone_name" {
 variable "domain-name" {
   description = "Domain name to be created"
   type        = string
-  default     = "podonecohort4.online"
+  default     = "fausatjtech.online"
 }
 
 variable "namecheap_api_user" {
   description = "Namecheap API user"
   type        = string
-  default     = "chibuzonwobia"
+  default     = "fausatjnamecheap"
 }
 variable "namecheap_api_key" {
   description = "Namecheap API key"
@@ -102,12 +102,12 @@ variable "namecheap_api_key" {
 variable "namecheap_username" {
   description = "Namecheap username"
   type        = string
-  default     = "chibuzonwobia"
+  default     = "fausatjnamecheap"
 }
 variable "namecheap_client_ip" {
   description = "Client IP for Namecheap API access"
   type        = string
-  default     = "100.27.216.128" # Replace with your actual client IP
+  default     = "18.217.10.10" # Replace with your actual client IP
 }
 
 #===========
@@ -164,5 +164,5 @@ variable "repository_name" {
 variable "email" {
   description = "Email address for notifications and certificates"
   type        = string
-  default     = "pod1finalproject@gmail.com"
+  default     = "jokeawotunde7@gmail.com"
 }
